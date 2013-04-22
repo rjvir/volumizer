@@ -32,12 +32,12 @@
   dancer = new Dancer();
   kick = dancer.createKick({
     onKick: function () {
-      var randhex = '#';
+/*      var randhex = '#';
       for(var r = 0; r<6; r++){
         randhex = randhex + Math.floor(Math.random()*4);
-      }
+      } */
 //      var randhex = '#'+(Math.floor(Math.random()*16777215)%8388607+8388607).toString(16);
-      $('body').animate({ backgroundColor: randhex }, 'slow');      
+//      $('body').animate({ backgroundColor: randhex }, 'slow');      
       var i;
       if ( particles[ 0 ].scale.x > MAX_PARTICLE_SIZE ) {
         decay();
