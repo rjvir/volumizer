@@ -1,0 +1,20 @@
+.controller {
+	width:44%;
+	height:80%;
+	margin-top:10%;
+	float:left;
+}
+
+.controller:first-child {
+	margin-left:4%;
+	margin-right:4%;
+}
+
+.control {
+	width:30%;
+	height:30%;
+	margin:1%;
+	border:1px solid black;
+	float:left;
+	background-color:yellow;
+}

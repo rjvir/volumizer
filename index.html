@@ -3,15 +3,43 @@
 	<head>
 		<link href='http://fonts.googleapis.com/css?family=Duru+Sans' rel='stylesheet' type='text/css'>
 		<link href='css/dancer.css' rel='stylesheet' type='text/css'>
+		<link href='css/ara.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<div style="position:absolute;top:0;right:0;padding:10px;20px;background-color:rgba(0,0,0,.8);">
-			<h2 style="text-align:left;color:#fff;margin-bottom:5px;font-size:16px;">Volumizer. Visualize Volume.</h2>
-			<p style="color:#fff;text-align:left;font-size:10px;">Made by Raj Vir for UARTS 250 at the University of Michigan.</p>
+			<h2 style="text-align:left;color:#fff;margin-bottom:5px;font-size:16px;">Beats With Ara</h2>
 		</div>
-		<div class="volume" style="display:none;color:#fff;font-size:48px;font-weight:bold;padding:30px;position:absolute;">Volume: <span class="intval"></span></div>
-		<canvas id="waveform" style="display:block;position:absolute;height:100%;width:100%;top:0;"></canvas>
-		<canvas id="fft" style="display:block;position:absolute;height:400px;width:300%;bottom:0;"></canvas>
+
+		<div class="visualizations" style="display:none;">
+			<canvas id="waveform" style="display:block;position:absolute;height:100%;width:100%;top:0;"></canvas>
+			<canvas id="fft" style="display:block;position:absolute;height:400px;width:300%;bottom:0;"></canvas>			
+		</div>
+
+		<div class="game" style="width:100%;height:100%;position:absolute;background-color:rgba(255,255,255,0.9);">
+			<div class="controller">
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+			</div>
+
+			<div class="controller">
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+				<div class="control"></div>
+			</div>
+		</div>
 		<div id="loading">Loading . . .</div>
 		<!-- Demo dependencies -->
 		<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>

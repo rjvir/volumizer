@@ -1,3 +1,36 @@
+  var control = 0;
+  stay = 1000;
+  diff = 2000;
+  last = new Date().getTime();
+
+
+  function getControl(){
+
+    var end = new Date().getTime();
+    var time = end - last;
+
+    if(time > diff){
+      var rand = Math.round(Math.random()*9) + 1;
+
+      if(control < 9){
+        control = rand + 9;
+      } else {
+        control = rand;
+      }
+
+      var box = $($('.control')[control]).css('backgroundColor', '#fff');
+      setTimeout(function(){
+        box.css('backgroundColor', 'yellow');
+      }, stay)
+
+      last = end;
+      console.log('Execution time: ' + time);
+      console.log(control);      
+    }
+
+  }
+
+
 (function () {
 
   var
@@ -38,22 +71,23 @@
       } */
 //      var randhex = '#'+(Math.floor(Math.random()*16777215)%8388607+8388607).toString(16);
 //      $('body').animate({ backgroundColor: randhex }, 'slow');      
-      var i;
-      if ( particles[ 0 ].scale.x > MAX_PARTICLE_SIZE ) {
-        decay();
-      } else {
-        for ( i = PARTICLE_COUNT; i--; ) {
-          particles[ i ].scale.addSelf( GROWTH_VECTOR );
-        }
-      }
-      if ( !beamGroup.children[ 0 ].visible ) {
-        for ( i = BEAM_COUNT; i--; ) {
-          beamGroup.children[ i ].visible = true;
-        }
-      }
-      ctx.strokeStyle = '#ff0077';
+      // var i;
+      // if ( particles[ 0 ].scale.x > MAX_PARTICLE_SIZE ) {
+      //   decay();
+      // } else {
+      //   for ( i = PARTICLE_COUNT; i--; ) {
+      //     particles[ i ].scale.addSelf( GROWTH_VECTOR );
+      //   }
+      // }
+      // if ( !beamGroup.children[ 0 ].visible ) {
+      //   for ( i = BEAM_COUNT; i--; ) {
+      //     beamGroup.children[ i ].visible = true;
+      //   }
+      // }
+      // ctx.strokeStyle = '#ff0077';
 
-      console.log('kick');
+      getControl();
+
     },
     offKick: function(){
       ctx.strokeStyle = '#666';
@@ -162,7 +196,7 @@
       supported = Dancer.isSupported(),
       p;
 
-    anchor.appendChild( document.createTextNode( supported ? 'Play! (Let It Go, Frozen)' : 'Close' ) );
+    anchor.appendChild( document.createTextNode( supported ? 'Play! (Happy, Pharrell)' : 'Close' ) );
     anchor.setAttribute( 'href', '#' );
     loading.innerHTML = '';
     loading.appendChild( anchor );
@@ -176,14 +210,14 @@
     anchor.addEventListener( 'click', function () {
       $('.volume').show();
       dancer.play();
-      setInterval(function(){ 
-        for(var a = 0, sum=0, x = dancer.getSpectrum(); a < x.length; a++) { 
-          sum += x[a]; 
-        } 
-//        sum = Math.floor((sum+100)/2)%100;
-        sum = Math.floor(sum/4*100)%100
-        $('.intval').html(sum);
-      }, 100)
+//       setInterval(function(){ 
+//         for(var a = 0, sum=0, x = dancer.getSpectrum(); a < x.length; a++) { 
+//           sum += x[a]; 
+//         } 
+// //        sum = Math.floor((sum+100)/2)%100;
+//         sum = Math.floor(sum/4*100)%100
+//         $('.intval').html(sum);
+//       }, 100)
 
       document.getElementById('loading').style.display = 'none';
     }, false );
