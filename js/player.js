@@ -1,7 +1,7 @@
 (function () {
 
   var
-    AUDIO_FILE        = 'songs/nosleep',
+    AUDIO_FILE        = 'songs/happy',
     PARTICLE_COUNT    = 250,
     MAX_PARTICLE_SIZE = 12,
     MIN_PARTICLE_SIZE = 2,
@@ -52,6 +52,8 @@
         }
       }
       ctx.strokeStyle = '#ff0077';
+
+      console.log('kick');
     },
     offKick: function(){
       ctx.strokeStyle = '#666';
@@ -160,7 +162,7 @@
       supported = Dancer.isSupported(),
       p;
 
-    anchor.appendChild( document.createTextNode( supported ? 'Play! (No Sleep, by Wiz Khalifa)' : 'Close' ) );
+    anchor.appendChild( document.createTextNode( supported ? 'Play! (Let It Go, Frozen)' : 'Close' ) );
     anchor.setAttribute( 'href', '#' );
     loading.innerHTML = '';
     loading.appendChild( anchor );
